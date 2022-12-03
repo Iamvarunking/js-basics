@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof operator</title>
+    <script>
+        function f1() {
+            var name = "varun"
+            var age  = 23
+            var IsPermanentRole = true
+            var cities = ['Delhi', "Hyd"]
+
+            var getDetails = function(a,b) {
+                return a+b;
+            }
+
+            document.write("DataType of Name: " +(typeof name)+"<br>" +"DataType of AGE: " + (typeof age)+"<br>"+"DataType of ROLE: " + (typeof IsPermanentRole)+"<br>" +"DataType of CITIES: " + (typeof cities)+"<br>" +"DataType of FUNCTION: " + (typeof getDetails))
+        }
+        f1()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

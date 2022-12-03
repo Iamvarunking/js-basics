@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnary Operator</title>
+    <script>
+        function login() {
+           var Uname = document.getElementById("txtName").value;
+           var Pname = document.getElementById("txtPwd").value;
+    
+    
+           var msg  = document.getElementById("msg");
+           var userDetails = {
+               userName:"v",
+               password: "S"
+           }
+           setTimeout(() => {
+            (Uname == userDetails.userName && Pname == userDetails.password)? 
+           document.write("login success") : msg.innerText = "Invalid Username/Password";
+           },0)
+       }
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Login</legend>
+            <dl>
+                <dt>UserName</dt>
+                <dd><input type="text" id="txtName"></dd>
+                <dt>Password</dt>
+                <dd><input type="password" id="txtPwd"></dd>
+                <br>
+                <dd><input type="button" value="login" onclick="login()"></dd>
+            </dl>
+        </fieldset>
+        <div>
+            <h2 id="msg"></h2>
+        </div>
+    </div>
+</body>
+</html>

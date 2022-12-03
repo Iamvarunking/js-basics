@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if statement</title>
+    <script>
+        function selectHardDisk () {
+            var IsHdd = document.getElementById('lstHdd');
+            var txtRam = document.getElementById('txtRam');
+            if (parseInt(IsHdd.value)>=5) {
+                txtRam.disabled = false;
+                IsHdd.disabled = true;
+            }
+        }
+
+        function selectRam () {
+            var txtRam = document.getElementById('txtRam'); 
+            var IsGraphic = document.getElementById('IsGraphic');
+            if (parseInt(txtRam.value) >= 4) {
+                IsGraphic.disabled = false;
+                txtRam.disabled = true;
+            }
+        }
+
+        function IsGraphicCard () {
+            var IsGraphic = document.getElementById('IsGraphic');
+            var btnInstall = document.getElementById('btnInstall');
+            //console.log(IsGraphic.value);
+            if (IsGraphic.value) {
+                btnInstall.disabled = false;
+                IsGraphic.disabled = true
+            }
+        }
+
+        function install () {
+            document.write("Game installed successfully");
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Install game</legend>
+            <dl>
+                <dt>select available hard disl size</dt>
+                <dd>
+                    <select name="" id="lstHdd" onchange="selectHardDisk()">
+                        <option value="2">2GB</option>
+                        <option value="5">5GB</option>
+                        <option value="10">10GB</option>
+                    </select>
+                </dd>
+                <dt>Select available ram</dt>
+                <dd>
+                    <input type="number" min="1" max="8" value="1" id="txtRam" disabled onchange="selectRam()">
+                </dd>
+                <dt>Is graphic card available</dt>
+                <dd>
+                    <select id="IsGraphic" disabled onchange="IsGraphicCard()">
+                        <option>select</option>
+                        <option value="true">yes</option>
+                        <option value="false">no</option>
+                    </select>
+                </dd>
+                <br>
+                <dd><input type="button" id="btnInstall" value="install" disabled onclick=""></dd>
+            </dl>
+        </fieldset>
+    </div>
+</body>
+</html>

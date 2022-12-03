@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else payment</title>
+    <script>
+        function submitClick () {
+            var userDeatils = {username:'varun', pin:1438, otp:4967}
+            var txtName = document.getElementById("txtName").value;
+            var txtCode = document.getElementById("txtCode").value
+            var msg = document.getElementById("msg");
+            if (txtName == userDeatils.username) {
+                if (txtCode == userDeatils.pin) {
+                    msg.innerText = "loged in successfully by pin"
+                    console.log("pin");
+                } else if (txtCode == userDeatils.otp){
+                    msg.innerText = "loged in successfully by otp"
+                } else {
+                    msg.innerText = "Invalid otp/pin"
+                }
+            } else {
+                msg.innerText = "Invalid username"
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>payment</legend>
+        <dl>
+            <dt>name on card</dt>
+            <dd><input type="text" id="txtName"></dd>
+            <dt>pin/otp</dt>
+            <dd><input type="text" id="txtCode" placeholder="you can use your otp"></dd>
+        </dl>
+    </fieldset>
+    <dl>
+        <dd><input type="button" value="submit" onclick="submitClick()"></dd>
+    </dl>
+    <div id="msg"></div>
+</body>
+</html>
