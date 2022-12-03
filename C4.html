@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in js</title>
+    <script>
+        function checkUser() {
+            var users = [
+                            {Name:'varun'},
+                            {Name: 'Harsh'},
+                            {Name: 'subhash'},
+                            {Name: 'Arpit'}
+                        ]
+            var userName  = document.getElementById("txtName").value;
+            var msg = document.getElementById("msg")
+
+            for (var i = 0; i<users.length; i++) {
+                if(userName == users[i].Name) {
+                    msg.innerHTML = "username taken"
+                    return;
+                } else {
+                    //console.log(users[i].Name);
+                    msg.innerHTML = "available"
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Names</legend>
+            Username:
+            <input type="text" id="txtName" onkeyup="checkUser()">
+            <span id="msg"></span>
+        </fieldset>
+    </div>
+</body>
+</html>
