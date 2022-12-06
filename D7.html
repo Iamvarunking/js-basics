@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator Object</title>
+    <script>
+        const f1 = () => {
+            document.getElementById("family").innerHTML = navigator.appName;
+            document.getElementById("lang").innerHTML = navigator.language;
+            document.getElementById("cookie").innerHTML = navigator.cookieEnabled;
+            document.getElementById("agent").innerHTML = navigator.userAgent;
+            for (var i = 0; i<navigator.plugins.length; i++) {
+                document.getElementById("plug").innerHTML +=  navigator.plugins[i].name+"<br>"
+            }
+            var msg  = document.getElementById("msg");
+            if (navigator.plugins["chrome pdf viewer"==undefined]) {
+                msg.innerHTML = "No";
+            } else {
+                msg.innerHTML = "Yes";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div align="center">
+            <input type="button" value="Get browser details" onclick="f1()">
+        </div>
+        <br>
+        <div>
+            <dl>
+                <dt>Browser family</dt>
+                <dd id="family"></dd>
+                <dt>browser language</dt>
+                <dd id="lang"></dd>
+                <dt>cookie enabled</dt>
+                <dd id="cookie"></dd>
+                <dt>Supported on</dt>
+                <dd id="agent"></dd>
+                <dt>plugin supported</dt>
+                <dd id="plug"></dd>
+                <dt>can user view pdf document?</dt>
+                <dd id="msg"></dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

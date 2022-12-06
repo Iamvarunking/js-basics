@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Object</title>
+    <script>
+        function bodyload() {
+            if (history.length>3) {
+                alert("register for more");
+                location.href = "D6.html"
+            } else {
+                document.write("You can view max three pages for free");
+                location.href = "D6.html"
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    
+</body>
+</html>
